@@ -1,0 +1,81 @@
+
+<link rel="stylesheet" href="css/cadastrar_produto.css">
+   
+<header>
+    <div class="logo-container">
+       <img src="imagens/logo.jpg" alt="Logo" style="max-height: 50px;"> 
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="title-box">
+        <h1>Cadastro de Produtos</h1>
+
+        <!-- FORMULÁRIO DENTRO DA DIV DO TÍTULO -->
+        <form method="POST" action="cadastrar_produto.php" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Nome do Produto</label>
+                <input type="text" name="nome_peca" required>
+            </div>
+
+            <div class="form-group">
+                <label>Descrição</label>
+                <input type="text" name="descricao" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Gênero</label>
+                    <select name="id_genero" required>
+                        <option value="">Selecione</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Unissex</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select name="id_categoria" required>
+                        <option value="">Selecione</option>
+                        <option value="1">Camiseta</option>
+                        <option value="2">Camisa</option>
+                        <option value="3">Bermuda</option>
+                        <option value="4">Shorts</option>
+                        <option value="5">Calça</option>
+                        <option value="6">Moletom</option>
+                        <option value="7">Blusa</option>
+                        <option value="8">Jaqueta</option>
+                        <option value="9">Calçado</option>
+                        <option value="10">Acessório</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Preço (R$)</label>
+                    <input type="number" step="0.01" name="preco" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagem do Produto</label>
+                    <input type="file" name="imagem" required>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                <button type="button" class="btn-excluir" onclick="confirmarSaida()">Voltar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function confirmarSaida() {
+        if (confirm('Tem certeza que deseja sair? As alterações não salvas serão perdidas.')) {
+            window.location.href = 'produtos_admin.php';
+        }
+    }
+</script>
